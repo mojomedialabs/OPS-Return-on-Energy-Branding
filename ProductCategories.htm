@@ -386,6 +386,34 @@ $(function() {
 	if ($(".product").length !== 0) {
 		$("#product-categories").remove();
 	}
+
+	$("#btnCartContinueBottom").click(function(event) {
+		var minimumQuantity = $(".product-minimum-quantity").text();
+
+		minimumQuantity = parseInt(minimumQuantity.substr(minimumQuantity.indexOf(": ") + 2), 10);
+
+		var quantity = parseInt($(".product-quantity input[type='text']").val(), 10);
+
+		if (quantity < minimumQuantity) {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+	});
+
+	$("#btnCartBottom").click(function() {
+		var minimumQuantity = $(".product-minimum-quantity").text();
+
+		minimumQuantity = parseInt(minimumQuantity.substr(minimumQuantity.indexOf(": ") + 2), 10);
+
+		var quantity = parseInt($(".product-quantity input[type='text']").val(), 10);
+
+		if (quantity < minimumQuantity) {
+			alert("You must order at least " + minimumQuantity.toString() + " of this product.");
+
+			event.preventDefault();
+		}
+	});
 });
 </script>
 <div id="added-to-cart">

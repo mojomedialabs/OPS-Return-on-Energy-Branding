@@ -179,6 +179,16 @@ footer {
 	width: 960px;
 }
 
+footer p {
+	color: #aaaaaa;
+	font-size: 9px;
+	text-align: center;
+}
+
+footer p a {
+	color: #aaaaaa !important;
+}
+
 /* End Footer */
 
 /* Begin Registration */
